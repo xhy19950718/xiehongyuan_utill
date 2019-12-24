@@ -23,7 +23,9 @@ public class CarUtil {
 			String param="\\d";
 			for(int i=CarId.length()-1;i>-1;i--) {
 				if(String.valueOf(CarId.charAt(i)).matches(param)) {
-					return Integer.parseInt(String.valueOf(CarId.charAt(i)));
+					int num=Integer.parseInt(String.valueOf(CarId.charAt(i)));
+					System.err.println("车牌："+num);
+					return num%2;
 				}
 			}
 			return 0;

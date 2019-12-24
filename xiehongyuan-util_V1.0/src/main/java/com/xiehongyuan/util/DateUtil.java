@@ -235,11 +235,22 @@ public class DateUtil {
 	 * @return
 	 * @throws ParseException 
 	 */
-	public static int getOddOrEven(String str) throws ParseException {
-		Date date = dateTimeFormat.parse(str);
-		Calendar calendar=Calendar.getInstance();
-		calendar.setTime(date);
-		int Day=calendar.get(Calendar.DAY_OF_WEEK);
-		return Day%2;
+	public static int getOddOrEven(String str) {
+		try {
+			Date date = dateTimeFormat.parse(str);
+			Calendar calendar=Calendar.getInstance();
+			calendar.setTime(date);
+			int Day=calendar.get(Calendar.DAY_OF_WEEK);
+			Day=Day-1;
+			if(Day==0) {
+				Day=7;
+			}
+			System.err.println("星期："+Day);
+			return Day%2;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return 0;
 	}
 }

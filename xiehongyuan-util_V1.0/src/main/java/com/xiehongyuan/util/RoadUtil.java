@@ -19,7 +19,6 @@ public class RoadUtil {
 		double radiansBY=Math.toRadians(39.9);
 		//long round = Math.round(Math.sqrt(Math.pow(X-39,2)+Math.pow(Y-116,2)));
 		double cos=Math.cos(radiansAY)*Math.cos(radiansBY)*Math.cos(radiansAX-radiansBX)+Math.sin(radiansAY)*Math.sin(radiansBY);
-		System.err.println("cos="+cos);
 		double round=6371*Math.acos(cos);
 		return round;
 	}
